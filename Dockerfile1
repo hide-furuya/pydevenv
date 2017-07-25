@@ -1,0 +1,12 @@
+FROM ubuntu:latest
+
+RUN apt update -y
+RUN apt upgrade -y
+RUN apt install -y python3 python3-venv
+RUN apt install -y language-pack-ja-base language-pack-ja
+RUN apt install -y sudo vim emacs-nox git
+
+RUN groupadd devel
+RUN useradd -g devel -G sudo -m -s /bin/bash devel
+RUN echo devel:develdevel | chpasswd
+

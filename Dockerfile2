@@ -1,0 +1,11 @@
+FROM ubuntu1
+
+USER devel
+WORKDIR /home/devel
+
+RUN python3 -m venv local
+ENV PATH=/home/devel/local/bin:$PATH
+
+RUN pip install --upgrade pip
+RUN pip install jedi
+RUN pip install mezzanine
